@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Notifications</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .sidebar {
+            background-color: #0d1117;
+            border-right: 1px solid #30363d;
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            margin-top: 60px;
+        }
+        .main-content {
+            margin-left: 280px;
+        }
+        .nav-link {
+            color: #c9d1d9;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+        .nav-link:hover {
+            background-color: #21262d;
+            color: #c9d1d9;
+        }
+        .nav-link.active {
+            background-color: #1f6feb;
+            color: white;
+        }
+        .notification-banner {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+        }
+        .form-control {
+            background-color: #0d1117;
+            border-color: #30363d;
+            color: #c9d1d9;
+        }
+        .form-control:focus {
+            background-color: #0d1117;
+            border-color: #58a6ff;
+            color: #c9d1d9;
+            box-shadow: none;
+        }
+        .btn-outline-secondary {
+            color: #c9d1d9;
+            border-color: #30363d;
+        }
+        .btn-outline-secondary:hover, .btn-outline-secondary.active {
+            background-color: #21262d;
+            border-color: #30363d;
+            color: #c9d1d9;
+        }
+        .notification-item {
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background-color: #161b22;
+        }
+        .notification-item:hover {
+            background-color: #1c2129;
+        }
+        .btn-success {
+            background-color: #238636;
+            border-color: #238636;
+        }
+        .btn-success:hover {
+            background-color: #2ea043;
+            border-color: #2ea043;
+        }
+        label{
+            color: #ffffff;
+        }
+        span{
+            color: #ffffff; 
+        }
+
+        input[placeholder="Search notifications"]::placeholder {
+        color: #ffffff; 
+        opacity: 1; 
+    }
+
+    .container {
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notification-icon img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.search-bar {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+    color: #aaa;
+}
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-light py-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+        
+            <div class="dropdown bg-dark">  
+                <button class="btn btn-outline-light dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">☰</button>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-light" href="home.html"><i class="bi bi-house"></i> Home</a></li>
+                    <li><a class="dropdown-item text-light" href="issues.html"><i class="bi bi-disc"></i>  Issues</a></li>
+                    <li><a class="dropdown-item text-light" href="PullRequests.html"><i class="bi bi-arrow-left-right"></i> Pull requests</a></li>
+                    <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban-fill"></i>  Projects</a></li>
+                    <li><hr class="dropdown-divider bg-light"></li>
+                </ul>
+            
+                <a href="notifications.html" class="text-light text-decoration-none fw-bold fs-4" >Notifications</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <input type="text" class="form-control form-control-sm bg-secondary text-light border-0" placeholder="Type / to search">
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-light"><i class="bi bi-exposure"></i></button>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <li><a class="dropdown-item text-light" href="new_repository.html"><i class="bi bi-journal-bookmark"></i> New repository</a></li>
+                        <li><a class="dropdown-item text-light" href="import.html"><i class="bi bi-journal-arrow-up"></i> Import repository</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban"></i> New project</a></li>
+                        
+                    </ul>
+                </div>
+            
+                <button class="btn btn-outline-light"><i class="bi bi-disc"></i> </button>
+                
+                <button class="btn btn-outline-light"><i class="bi bi-arrow-left-right"></i></button>   
+                <button class="btn btn-outline-light">
+                    <a href="notifications.html" class="text-light">
+                        <i class="bi bi-inbox"></i>
+                    </a>
+                </button>
+
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./imagenes/images.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <!--<li><a class="dropdown-item text-light" href="#"><i class="bi bi-emoji-smile"></i> Set status</a></li>-->
+                        <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal" data-bs-target="#setStatusModal">
+                        <i class="bi bi-emoji-smile"></i> Set status
+                    </a></li>
+                        <li><a class="dropdown-item text-light" href="Overviews.html"><i class="bi bi-person-circle"></i> your profile</a></li>
+                        <li><a class="dropdown-item text-light"  href="projects.html"><i class="bi bi-journal-album"></i> your projects</a></li>
+                        <li><a class="dropdown-item text-light" href="stars.html"><i class="bi bi-star"></i> your stars</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-people"></i> your organizations</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                        <li><a class="dropdown-item  text-light" href="login.html"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="setStatusModal" tabindex="-1" aria-labelledby="setStatusModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setStatusModalLabel"><i class="bi bi-emoji-smile"></i> Set Status</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="statusText" class="form-label">Your Status</label>
+                                <input type="text" class="form-control bg-dark text-light" id="statusText" placeholder="Enter your status...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="statusEmoji" class="form-label">Select Emoji</label>
+                                <select class="form-select bg-dark text-light" id="statusEmoji">
+                                    <option value="😊">😊 Happy</option>
+                                    <option value="😢">😢 Sad</option>
+                                    <option value="😎">😎 Cool</option>
+                                    <option value="😴">😴 Tired</option>
+                                    <option value="🤔">🤔 Thinking</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear Status</button>
+                        <button type="button" class="btn btn-primary">Set Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="sidebar p-3">
+        <a href="notifications.html" class="nav-item active">
+            <div class="nav-item-content">
+                <i class="bi bi-inbox"></i>
+                <span> Inbox</span>
+            </div>
+        
+        </a>
+        <a href="save.html" class="nav-item">
+            <div class="nav-item-content">
+                <i class="bi bi-bookmark"></i>
+                <span>Saved</span>
+            </div>
+        </a>
+        <a href="done.html" class="nav-item">
+            <div class="nav-item-content">
+                <i class="bi bi-check2-circle"></i>
+                <span>Done</span>
+            </div>
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <header>
+            <input type="text" class="form-control search-bar" placeholder="Search notifications">
+
+        </header>
+        <main class="main-content">
+            <div class="notification-icon">
+                <img src="./imagenes/3.png" alt="GitHub Octocat">
+            </div>
+            <h2>Mark as done</h2>
+            <p>Mark notifications as done so you can move on with your work.
+                New activity appears in your inbox.</p>
+        </main>
+    </div>
+</body>
+</html>

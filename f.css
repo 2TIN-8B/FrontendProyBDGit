@@ -1,0 +1,148 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+nav a:hover {
+    color: #58a6ff !important;
+    text-decoration: underline;
+}
+
+input::placeholder {
+    color: #000000;
+}
+
+.rounded-circle {
+    background-image: url(./imagenes/images.jpeg); 
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.edit-profile {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile:hover {
+    background-color: #30363d;
+}
+
+.repositories {
+    margin-bottom: 20px;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.repo {
+    background-color: #161b22;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.repo a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
+
+.contributions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contribution-chart {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 5px;
+    color: #8b949e;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #161b22;
+    color: #8b949e;
+}
+
+.repo-card {
+    color: white;
+  }
+  
+  .repo-card a.repo-name {
+    color: white;
+  }
+  
+  .repo-card .repo-visibility,
+  .repo-card .repo-details {
+    color: lightgray;
+  }
+  
+  .repo-card button {
+    color: white;
+    border-color: white;
+  }
+  
+  .repo-card .dropdown-menu .dropdown-item {
+    color: white;
+  }
+  
+.repo-card {
+  color: white;
+}
+
+.repo-card a.repo-name {
+  color: white;
+}
+
+.repo-card .repo-visibility {
+  color: lightgray !important; 
+}
+
+.repo-card .repo-details {
+  color: lightgray !important; 
+}
+
+.repo-card button {
+  color: white;
+  border-color: white;
+}
+
+.repo-card .dropdown-menu .dropdown-item {
+  color: white;
+}
+
+

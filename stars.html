@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="f.css">
+
+    <style>
+    
+        .text-muted, .text-primary, .text-light {
+            color: white !important; 
+        }
+    
+        
+        a.text-decoration-none {
+            color: white !important;
+        }
+    
+        a.text-decoration-none:hover {
+            color: lightgray; /
+        }
+    
+        .card {
+            background-color: #2d2d2d !important;
+            color: white;
+        }
+    
+    
+        .btn-outline-secondary {
+            border-color: rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+        }
+    
+        .btn-outline-secondary:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    
+</head>
+<body>
+ 
+    <header class="bg-dark text-light py-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+        
+            <div class="dropdown bg-dark">  
+                <button class="btn btn-outline-light dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">☰</button>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-light" href="home.html"><i class="bi bi-house"></i> Home</a></li>
+                    <li><a class="dropdown-item text-light" href="issues.html"><i class="bi bi-disc"></i>  Issues</a></li>
+                    <li><a class="dropdown-item text-light" href="PullRequests.html"><i class="bi bi-arrow-left-right"></i> Pull requests</a></li>
+                    <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban-fill"></i>  Projects</a></li>
+                    <li><hr class="dropdown-divider bg-light"></li>
+                </ul>
+            
+                <a href="#" class="text-light text-decoration-none fw-bold fs-4">Julio0a</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <input type="text" class="form-control form-control-sm bg-secondary text-light border-0" placeholder="Type / to search">
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-light"><i class="bi bi-exposure"></i></button>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <li><a class="dropdown-item text-light" href="new_repository.html"><i class="bi bi-journal-bookmark"></i> New repository</a></li>
+                        <li><a class="dropdown-item text-light" href="import.html"><i class="bi bi-journal-arrow-up"></i> Import repository</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban"></i> New project</a></li>
+                        
+                    </ul>
+                </div>
+            
+                <button class="btn btn-outline-light"><i class="bi bi-disc"></i> </button>
+                
+                <button class="btn btn-outline-light"><i class="bi bi-arrow-left-right"></i></button>   
+                <button class="btn btn-outline-light">
+                    <a href="notifications.html" class="text-light">
+                        <i class="bi bi-inbox"></i>
+                    </a>
+                </button>  
+
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./imagenes/images.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <!--<li><a class="dropdown-item text-light" href="#"><i class="bi bi-emoji-smile"></i> Set status</a></li>-->
+                        <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal" data-bs-target="#setStatusModal">
+                        <i class="bi bi-emoji-smile"></i> Set status
+                    </a></li>
+                        <li><a class="dropdown-item text-light" href="Overviews.html"><i class="bi bi-person-circle"></i> your profile</a></li>
+                        <li><a class="dropdown-item text-light"  href="projects.html"><i class="bi bi-journal-album"></i> your projects</a></li>
+                        <li><a class="dropdown-item text-light" href="stars.html"><i class="bi bi-star"></i> your stars</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-people"></i> your organizations</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                        <li><a class="dropdown-item  text-light" href="login.html"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="setStatusModal" tabindex="-1" aria-labelledby="setStatusModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setStatusModalLabel"><i class="bi bi-emoji-smile"></i> Set Status</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="statusText" class="form-label">Your Status</label>
+                                <input type="text" class="form-control bg-dark text-light" id="statusText" placeholder="Enter your status...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="statusEmoji" class="form-label">Select Emoji</label>
+                                <select class="form-select bg-dark text-light" id="statusEmoji">
+                                    <option value="😊">😊 Happy</option>
+                                    <option value="😢">😢 Sad</option>
+                                    <option value="😎">😎 Cool</option>
+                                    <option value="😴">😴 Tired</option>
+                                    <option value="🤔">🤔 Thinking</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear Status</button>
+                        <button type="button" class="btn btn-primary">Set Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-dark border-bottom border-secondary">
+        <div>
+            <a href="Overviews.html" class="text-light text-decoration-none mx-3"> <i class="bi bi-book"></i> Overview</a>
+            <a href="repositories.html" class="text-light text-decoration-none mx-3"><i class="bi bi-journal"></i>Repositories <span class="badge bg-secondary"></span></a>
+            <a href="projects.html" class="text-light text-decoration-none mx-3"><i class="bi bi-kanban-fill"></i> Projects</a>
+            <a href="Packages.html" class="text-light text-decoration-none mx-3"><i class="bi bi-box-seam"></i> Packages</a>
+            <a href="stars.html" class="text-light text-decoration-none mx-3"><i class="bi bi-star-fill"></i>Stars <span class="badge bg-secondary"></span></a>
+        </div>
+    </nav>
+
+
+    <main class="bg-dark text-light py-5">
+    
+            <section class="profile">
+                <img src="./imagenes/images.jpeg" alt="Avatar" class="avatar">
+                <h2>Julio0a</h2>
+                
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Editar</button>
+
+            
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar pefil</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label text-light">nombre:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label text-light">biografia:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+
+                        </div>
+                        
+                        <div class="dropdown mb-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Pronouns
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button">Don't specify</button></li>
+                                <li><button class="dropdown-item" type="button">they/them</button></li>
+                                <li><button class="dropdown-item" type="button">she/her</button></li>
+                                <li><button class="dropdown-item" type="button">he/him</button></li>
+                                <li><button class="dropdown-item" type="button">custom</button></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mb-3">
+                            <label for="message-text" class="col-form-label text-light">Company:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="dropdown mb-3">
+                            <label for="message-text" class="col-form-label text-light">locations:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="dropdown mb-3">
+                            <label for="message-text" class="col-form-label text-light">Website:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <div class="dropdown mb-3">
+                            <label for="message-text" class="col-form-label text-light">Social accounts:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">save</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </section>
+            <div class="container">
+            
+                <div class="mb-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="h4 mb-0">Lists (0)</h2>
+                        <button class="btn btn-success btn-sm">
+                            <i class="bi bi-plus-lg me-1"></i>
+                            Create list
+                        </button>
+                    </div>
+                    <div class="card bg-dark border-secondary">
+                        <div class="card-body text-center py-5">
+                            <div class="mb-3">
+                                <i class="bi bi-star text-muted" style="font-size: 2rem;"></i>
+                            </div>
+                            <h3 class="h4 mb-3 " >Create your first list</h3>
+                            <p class="text-muted mb-3">
+                                Lists make it easier to organize and curate repositories that you have starred.
+                                <a href="#" class="text-primary text-decoration-none" style="color: rgb(0, 140, 255);">Create your first list</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+            
+                <div>
+                    <h2 class="h4 mb-4">Stars</h2>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control bg-dark text-light border-secondary" placeholder="Search stars">
+                                <button class="btn btn-outline-secondary">Search</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex gap-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Type: All
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">All</a></li>
+                                        <li><a class="dropdown-item" href="#">Public</a></li>
+                                        <li><a class="dropdown-item" href="#">Private</a></li>
+                                        <li><a class="dropdown-item" href="#">Sources</a></li>
+                                        <li><a class="dropdown-item" href="#">Forks</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Language
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">All</a></li>
+                                        <li><a class="dropdown-item" href="#">Python</a></li>
+                                        <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                                        <li><a class="dropdown-item" href="#">Java</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Sort by: Recently starred
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Recently starred</a></li>
+                                        <li><a class="dropdown-item" href="#">Recently active</a></li>
+                                        <li><a class="dropdown-item" href="#">Most stars</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    
+                    <div class="card bg-dark border-secondary mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h3 class="h5 mb-1">
+                                        <a href="#" class="text-primary text-decoration-none">ConsSorto / learningPython3</a>
+                                    </h3>
+                                    <p class="text-muted mb-2">
+                                        This space is for the Python 3 Object-Oriented Programming (OOP) class. Enjoy!
+                                    </p>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <span class="d-flex align-items-center">
+                                            <span class="repo-language-color bg-primary rounded-circle d-inline-block me-1" style="width: 12px; height: 12px;"></span>
+                                            Python
+                                        </span>
+                                        <span class="d-flex align-items-center">
+                                            <i class="bi bi-star me-1"></i>
+                                            5
+                                        </span>
+                                        <span class="text-muted">Updated on Nov 23, 2023</span>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        Starred
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Add to list...</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Unstar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    
+
+
+        <footer class="footer">
+            <p>&copy; 2024 Julio0a. All rights reserved.</p>
+        </footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    
+    </html>
+    

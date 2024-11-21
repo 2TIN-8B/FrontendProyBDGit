@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Notifications</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .sidebar {
+            background-color: #0d1117;
+            border-right: 1px solid #30363d;
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            margin-top: 60px;
+        }
+        .main-content {
+            margin-left: 280px;
+        }
+        .nav-link {
+            color: #c9d1d9;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+        .nav-link:hover {
+            background-color: #21262d;
+            color: #c9d1d9;
+        }
+        .nav-link.active {
+            background-color: #1f6feb;
+            color: white;
+        }
+        .notification-banner {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+        }
+        .form-control {
+            background-color: #0d1117;
+            border-color: #30363d;
+            color: #c9d1d9;
+        }
+        .form-control:focus {
+            background-color: #0d1117;
+            border-color: #58a6ff;
+            color: #c9d1d9;
+            box-shadow: none;
+        }
+        .btn-outline-secondary {
+            color: #c9d1d9;
+            border-color: #30363d;
+        }
+        .btn-outline-secondary:hover, .btn-outline-secondary.active {
+            background-color: #21262d;
+            border-color: #30363d;
+            color: #c9d1d9;
+        }
+        .notification-item {
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background-color: #161b22;
+        }
+        .notification-item:hover {
+            background-color: #1c2129;
+        }
+        .btn-success {
+            background-color: #238636;
+            border-color: #238636;
+        }
+        .btn-success:hover {
+            background-color: #2ea043;
+            border-color: #2ea043;
+        }
+        label{
+            color: #ffffff;
+        }
+        span{
+            color: #ffffff; 
+        }
+
+        input[placeholder="Search notifications"]::placeholder {
+        color: #ffffff; 
+        opacity: 1; 
+    }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-light py-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+        
+            <div class="dropdown bg-dark">  
+                <button class="btn btn-outline-light dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">☰</button>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item text-light" href="home.html"><i class="bi bi-house"></i> Home</a></li>
+                    <li><a class="dropdown-item text-light" href="issues.html"><i class="bi bi-disc"></i>  Issues</a></li>
+                    <li><a class="dropdown-item text-light" href="PullRequests.html"><i class="bi bi-arrow-left-right"></i> Pull requests</a></li>
+                    <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban-fill"></i>  Projects</a></li>
+                    <li><hr class="dropdown-divider bg-light"></li>
+                </ul>
+                <a href="notifications.html" class="text-light text-decoration-none fw-bold fs-4" >Notifications</a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <input type="text" class="form-control form-control-sm bg-secondary text-light border-0" placeholder="Type / to search">
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-light"><i class="bi bi-exposure"></i></button>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <li><a class="dropdown-item text-light" href="new_repository.html"><i class="bi bi-journal-bookmark"></i> New repository</a></li>
+                        <li><a class="dropdown-item text-light" href="repositories.html"><i class="bi bi-journal-arrow-up"></i> Import repository</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban"></i> New project</a></li>
+                    </ul>
+                </div>
+            
+                <button class="btn btn-outline-light"><i class="bi bi-disc"></i> </button>
+                
+                <button class="btn btn-outline-light"><i class="bi bi-arrow-left-right"></i></button>   
+                <button class="btn btn-outline-light">
+                    <a href="notifications.html" class="text-light">
+                        <i class="bi bi-inbox"></i> 
+                    </a>
+                </button>
+
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./imagenes/images.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <!--<li><a class="dropdown-item text-light" href="#"><i class="bi bi-emoji-smile"></i> Set status</a></li>-->
+                        <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal" data-bs-target="#setStatusModal">
+                        <i class="bi bi-emoji-smile"></i> Set status
+                    </a></li>
+                        <li><a class="dropdown-item text-light" href="Overviews.html"><i class="bi bi-person-circle"></i> your profile</a></li>
+                        <li><a class="dropdown-item text-light"  href="projects.html"><i class="bi bi-journal-album"></i> your projects</a></li>
+                        <li><a class="dropdown-item text-light" href="stars.html"><i class="bi bi-star"></i> your stars</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-people"></i> your organizations</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                        <li><a class="dropdown-item  text-light" href="login.html"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="setStatusModal" tabindex="-1" aria-labelledby="setStatusModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setStatusModalLabel"><i class="bi bi-emoji-smile"></i> Set Status</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="statusText" class="form-label">Your Status</label>
+                                <input type="text" class="form-control bg-dark text-light" id="statusText" placeholder="Enter your status...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="statusEmoji" class="form-label">Select Emoji</label>
+                                <select class="form-select bg-dark text-light" id="statusEmoji">
+                                    <option value="😊">😊 Happy</option>
+                                    <option value="😢">😢 Sad</option>
+                                    <option value="😎">😎 Cool</option>
+                                    <option value="😴">😴 Tired</option>
+                                    <option value="🤔">🤔 Thinking</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear Status</button>
+                        <button type="button" class="btn btn-primary">Set Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="sidebar p-3">
+        <a href="notifications.html" class="nav-item active">
+            <div class="nav-item-content">
+                <i class="bi bi-inbox"></i>
+                <span> Inbox</span>
+            </div>
+        
+        </a>
+        <a href="save.html" class="nav-item">
+            <div class="nav-item-content">
+                <i class="bi bi-bookmark"></i>
+                <span>Saved</span>
+            </div>
+        </a>
+        <a href="done.html" class="nav-item">
+            <div class="nav-item-content">
+                <i class="bi bi-check2-circle"></i>
+                <span>Done</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="main-content p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex gap-2">
+                <button id="allBtn" class="btn btn-outline-secondary active">All</button>
+                <button id="unreadBtn" class="btn btn-outline-secondary">Unread</button>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark border-secondary">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search notifications">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Group by: Date
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#">Date</a></li>
+                        <li><a class="dropdown-item" href="#">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="allView">
+            <div class="notification-banner p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="d-flex gap-3">
+                        <div class="text-primary">
+                            <i class="bi bi-inbox-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Clear out the clutter.</h5>
+                            <p class="mb-0 text-muted"> <label>Get the most out of your new inbox by quickly and easily marking all of your previously read notifications as done. </label> </p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary">Dismiss</button>
+                        <button class="btn btn-success">Get started</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="selectAll">
+                    <label class="form-check-label" for="selectAll">Select all</label>
+                </div>
+            </div>
+
+            <div class="notification-item p-3 mb-3">
+                <div class="d-flex align-items-start">
+                    <div class="form-check me-3">
+                        <input class="form-check-input" type="checkbox">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <i class="bi bi-envelope me-2"></i>
+                                <span>Invitation to join MauVela12/BackEnd from MauVela12</span>
+                            </div>
+                            <small class="text-muted"> <label> subscribed  </label></small>
+                        </div>
+                        <small class="text-muted">on Aug 13</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-lightbulb text-muted"></i>
+                    <small class="text-muted"> <label>! Create custom filters to quickly access your most important notifications. </label></small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span>1-1 of 1</span>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-secondary btn-sm" disabled>Prev</button>
+                        <button class="btn btn-outline-secondary btn-sm" disabled>Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="unreadView" style="display: none;">
+            <div class="notification-banner p-4 mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="d-flex gap-3">
+                        <div class="text-primary">
+                            <i class="bi bi-check2-circle fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">All caught up!</h5>
+                            <p class="mb-0 text-muted"> <label> You have no unread notifications. </label></p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-secondary"><label> Viewa all notifications </label></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-5">
+                <div class="mb-4">
+                    <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
+                </div>
+                <h3 class="h4 mb-2"> <label> No unread notifications </label></h3>
+                <p class="text-muted">
+                    <label> When you have unread notifications, they'll appear here. </label>
+                </p>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-lightbulb text-muted"></i>
+                    <small class="text-muted"> <label> ProTip! Create custom filters to quickly access your most important notifications. </label></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const allBtn = document.getElementById('allBtn');
+            const unreadBtn = document.getElementById('unreadBtn');
+            const allView = document.getElementById('allView');
+            const unreadView = document.getElementById('unreadView');
+
+            allBtn.addEventListener('click', function() {
+                allBtn.classList.add('active');
+                unreadBtn.classList.remove('active');
+                allView.style.display = 'block';
+                unreadView.style.display = 'none';
+            });
+
+            unreadBtn.addEventListener('click', function() {
+                unreadBtn.classList.add('active');
+                allBtn.classList.remove('active');
+                unreadView.style.display = 'block';
+                allView.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

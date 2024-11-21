@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-dark text-light py-2">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+        
+          <div class="dropdown bg-dark">  
+            <button class="btn btn-outline-light dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">☰</button>
+            <ul class="dropdown-menu bg-dark">
+                <li><a class="dropdown-item text-light" href="home.html"><i class="bi bi-house"></i> Home</a></li>
+                <li><a class="dropdown-item text-light" href="issues.html"><i class="bi bi-disc"></i>  Issues</a></li>
+                <li><a class="dropdown-item text-light" href="PullRequests.html"><i class="bi bi-arrow-left-right"></i> Pull requests</a></li>
+                <li><a class="dropdown-item text-light" href="projects.html"><i class="bi bi-kanban-fill"></i>  Projects</a></li>
+                <li><hr class="dropdown-divider bg-light"></li>
+                <li><a class="dropdown-item text-light" href="repositories.html">Repositories</a></li>
+            </ul>
+            
+                <img id="imgarr" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="Profile Picture" class="profile-picture">
+                <a href="#" class="text-light text-decoration-none fw-bold fs-4">Settings</a>
+            </div>
+  
+            <div class="d-flex align-items-center gap-3">
+                <input type="text" class="form-control form-control-sm bg-secondary text-light border-0" placeholder="Type / to search">
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-light"><i class="bi bi-exposure"></i></button>
+                    </a>
+                      <ul class="dropdown-menu text-small shadow bg-dark" >
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-journal-bookmark"></i> New repository</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-journal-arrow-up"></i> Import repository</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light"  href="#"><i class="bi bi-pc-display-horizontal"></i> New codespace</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-arrow-left-right"></i> New gits</a></li>
+                        <li><hr class="dropdown-divider  bg-light"></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-building"></i> New organizations</a></li>
+                        <li><a class="dropdown-item text-light" href="#"><i class="bi bi-kanban"></i> New project</a></li>
+                        
+                      </ul>
+                </div>
+            
+                <button class="btn btn-outline-light"><i class="bi bi-disc"></i> </button>
+                
+                <button class="btn btn-outline-light"><i class="bi bi-arrow-left-right"></i></button>   
+                <button class="btn btn-outline-light"><i class="bi bi-inbox"></i></button>   
+
+                <div class="flex-shrink-0 dropdown bg-dark">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="./imagenes/images.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow bg-dark" >
+                      <!--<li><a class="dropdown-item text-light" href="#"><i class="bi bi-emoji-smile"></i> Set status</a></li>-->
+                      <li><a class="dropdown-item text-light" href="#" data-bs-toggle="modal" data-bs-target="#setStatusModal">
+                        <i class="bi bi-emoji-smile"></i> Set status
+                    </a></li>
+                      <li><a class="dropdown-item text-light" href="Overviews.html"><i class="bi bi-person-circle"></i> your profile</a></li>
+                      <li><a class="dropdown-item text-light"  href="projects.html"><i class="bi bi-journal-album"></i> your projects</a></li>
+                      <li><a class="dropdown-item text-light" href="stars.html"><i class="bi bi-star"></i> your stars</a></li>
+                      <li><a class="dropdown-item text-light" href="#"><i class="bi bi-people"></i> your organizations</a></li>
+                      <li><hr class="dropdown-divider  bg-light"></li>
+                      <li><a class="dropdown-item text-light" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                      <li><a class="dropdown-item  text-light" href="login.html"><i class="bi bi-box-arrow-left"></i> Sign out</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="setStatusModal" tabindex="-1" aria-labelledby="setStatusModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="setStatusModalLabel"><i class="bi bi-emoji-smile"></i> Set Status</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="statusText" class="form-label">Your Status</label>
+                                <input type="text" class="form-control bg-dark text-light" id="statusText" placeholder="Enter your status...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="statusEmoji" class="form-label">Select Emoji</label>
+                                <select class="form-select bg-dark text-light" id="statusEmoji">
+                                    <option value="😊">😊 Happy</option>
+                                    <option value="😢">😢 Sad</option>
+                                    <option value="😎">😎 Cool</option>
+                                    <option value="😴">😴 Tired</option>
+                                    <option value="🤔">🤔 Thinking</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear Status</button>
+                        <button type="button" class="btn btn-primary">Set Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://avatars.githubusercontent.com/u/9919?v=4" alt="Profile Picture" class="profile-picture">
+      <h2>2TIN-8B</h2>
+      <p>Your personal account</p>
+    </div>
+    <div class="menu">
+      <ul>
+        <li>Public profile</li>
+        <li>Account</li>
+        <li>Appearance</li>
+        <li>Accessibility</li>
+        <li>Notifications</li>
+        <li>Emails</li>
+        <li>SSH and GPG keys</li>
+        <li>Organizations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="section">
+      <h2>Public profile</h2>
+      <hr>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name">
+          <p>Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.</p>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="email">Public email</label>
+          <select id="email">
+            <option>Select a verified email to display</option>
+            <option>email@example.com</option>
+          </select>
+          <p>You have set your email address to private. To toggle email privacy, go to email settings and uncheck "Keep my email address private."</p>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <textarea id="bio" placeholder="Tell us a little bit about yourself"></textarea>
+          <p>You can @mention other users and organizations to link to them.</p>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="pronouns">Pronouns</label>
+          <select id="pronouns">
+            <option>Don't specify</option>
+            <option>He/Him</option>
+            <option>She/Her</option>
+            <option>They/Them</option>
+          </select>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="url">URL</label>
+          <input type="text" id="url" placeholder="Personal website or portfolio">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="orcid">ORCID ID</label>
+          <p>ORCID provides a persistent identifier - an ORCID iD - that distinguishes you from other researchers. Learn more at ORCID.org.</p>
+          <button type="button" class="button">Connect your ORCID ID</button>
+        </div>
+        <br>
+      </form>
+    <div>
+      <label for="url">Social accounts</label>
+      <input type="text" id="url" placeholder="Link to social profile">
+      <input type="text" id="url" placeholder="Link to social profile">
+      <input type="text" id="url" placeholder="Link to social profile">
+      <input type="text" id="url" placeholder="Link to social profile">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="name">Company</label>
+        <input type="text" id="name" placeholder="">
+        <p>You can @mention your company’s GitHub organization to link it.</p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="name">Location</label>
+        <input type="text" id="name" placeholder="">
+        <div class="checkbox-group">
+            <input type="checkbox" id="profile-private"> <label for="profile-private">Display current local time</label>
+        </div>
+        <p>All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears. Please see our privacy statement to learn more about how we use this information.</p>
+        <button class="button">Update profile</button>
+    </div>
+    </div>
+    <br>
+
+    <div class="section">
+      <h2>Contributions & activity</h2>
+      <hr>
+      <div class="checkbox-group">
+        <input type="checkbox" id="profile-private"> <label for="profile-private">Make profile private and hide activity</label>
+      </div>
+      <p>Enabling this will hide your contributions and activity from your GitHub profile and from social features like followers, stars, feeds, leaderboards and releases.</p>
+      <div class="checkbox-group">
+        <input type="checkbox" id="include-photo-contributions"> <label for="include-photo-contributions">Include photo contributions on my profile</label>
+      </div>
+      <p>Your contribution graph, achievements, and activity overview will show your private contributions without revealing any repository or organization information. Read more.</p>
+      <button class="button">Update preferences</button>
+    </div>
+    <br>
+
+    <div class="section">
+        <h2>Profile settings</h2>
+        <hr>
+        <div class="checkbox-group">
+            <input type="checkbox" id="profile-private"> <label for="profile-private">Show Achievements on my profile</label>
+        </div>
+        <p>Your achievements will be shown on your profile.</p>
+        <button class="button">Update preferences</button>
+    </div>
+    <br>
+
+    <div class="section">
+      <h2>GitHub Developer Program</h2>
+      <p>Building an application, service, or tool that integrates with GitHub? <a href="#" class="link">Join the GitHub Developer Program</a>.</p>
+    </div>
+    <br>
+
+    <div class="section">
+        <h2>Jobs profile</h2>
+        <hr>
+        <div class="checkbox-group">
+            <input type="checkbox" id="profile-private"> <label for="profile-private">Available for hire</label>
+        </div>
+        <button class="button">Save Jobs profile</button>
+    </div>
+    <br>
+
+    <div class="section">
+      <h2>Trending settings</h2>
+      <hr>
+      <div class="form-group">
+        <label for="spoken-language">Preferred spoken language</label>
+        <select id="spoken-language">
+          <option>No Preference</option>
+          <option>English</option>
+          <option>Spanish</option>
+        </select>
+      </div>
+      <p>We'll use this language preference to filter the trending repository lists on Explore our Trending Repositories page.</p>
+      <button class="button">Save Trending settings</button>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
